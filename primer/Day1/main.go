@@ -137,6 +137,48 @@ func printProgrammingLanguages() {
 	fmt.Println(languages)
 }
 
+// 15. Write a program that takes a number as input from the user and displays the value corresponding to this number. Use the number obtained from the user as the index.
+func printElementFromArrayUsingIndex() {
+	var n int
+	var names = [8]string{"Nicol", "Mead", "Nethanel", "Richard", "Flavio", "Ricardo", "Tima", "Hanna"}
+	fmt.Print("Enter a number from 0 to 7(inclusive): ")
+	fmt.Scanln(&n)
+	for {
+		if n < 0 || n > 7 {
+			fmt.Print("Your input is doesn't belong in the range. Enter a new number again: ")
+			fmt.Scanln(&n)
+		} else {
+			break
+		}
+	}
+	fmt.Println(names[n])
+}
+
+// 16. Create a program that get a number and a string from the user. Use the entered number as an index to update the corresponding value in a predefined array with the user-provided string.
+func updateArray() {
+	var (
+		n   uint8
+		str string
+	)
+	fruits := [...]string{"apple", "banana", "orange", "grape"}
+	fmt.Print("Enter the index between 0-3(inclusive): ")
+	fmt.Scanln(&n)
+	fmt.Print("Enter a new string: ")
+	fmt.Scanln(&str)
+	fruits[n] = str
+	fmt.Println("Updated fruits array: ", fruits)
+}
+
+// 17. Write a program that takes an array of elements and prints the result of multiplying each element by 2. For example, if the array is {4, 5, 8, 10}, the output should be {8, 10, 16, 20}.
+func updateArrayElements() {
+	numberList := [...]int{23, 34, 66, 78, 200, 97, 89}
+
+	for i := 0; i < len(numberList); i++ {
+		fmt.Print(numberList[i]*2, ",")
+	}
+	fmt.Println()
+}
+
 func main() {
 	// printVariablesInScopes()
 	// updateAndPrintVariables()
@@ -151,5 +193,8 @@ func main() {
 	// demonstrateLogicalOperators()
 	// provideScoreFeedback()
 	// printOccurrencePattern()
-	printProgrammingLanguages()
+	// printProgrammingLanguages()
+	// printElementFromArrayUsingIndex()
+	// updateArray()
+	updateArrayElements()
 }
