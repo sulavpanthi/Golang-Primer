@@ -27,17 +27,18 @@ func createSliceFromUserInput() {
 // 3. Create a new slice from existing slice using copy
 func copySlice() {
 	source := []int{1, 2, 3}
-	destination := make([]int, len(source))
+	destination := make([]int, len(source)+5)
 	copy(destination, source)
 	fmt.Println("Source", source)
-	fmt.Println("Destination", destination)
+	fmt.Println("Destination", destination, destination[len(destination)-1])
 }
 
-// 4. Use append to make changes in a slice and see how it affects the underlying array
+// 4. Use append to make changes in a slice beyond its capacity and see how it affects the underlying array
 func updateSliceUsingAppend() {
 	arr := []int{10, 20, 30}
 	slice1 := arr[:2]
-	slice2 := append(slice1, 40)
+	slice2 := append(slice1, 40, 50)
+	slice2[0] = 1
 	fmt.Println("slice1", slice1, len(slice1), cap(slice1))
 	fmt.Println("slice2", slice2, len(slice2), cap(slice2))
 	fmt.Println("initial slice", arr, len(arr), cap(arr))
