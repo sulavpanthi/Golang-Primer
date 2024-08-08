@@ -24,11 +24,12 @@ func createSliceFromUserInput() {
 	fmt.Println("Capacity of slice created is:", cap(slice))
 }
 
-// 3. Create a new slice from existing slice using copy
+// 3. Create a new slice from existing slice using copy then modify the latest copy and see how it affects both source and destination slices
 func copySlice() {
 	source := []int{1, 2, 3}
 	destination := make([]int, len(source)+5)
 	copy(destination, source)
+	destination[0] = 11
 	fmt.Println("Source", source)
 	fmt.Println("Destination", destination, destination[len(destination)-1])
 }
@@ -58,7 +59,7 @@ func updateSliceUsingIndex() {
 func main() {
 	// createANewSlice()
 	// createSliceFromUserInput()
-	// copySlice()
+	copySlice()
 	// updateSliceUsingAppend()
-	updateSliceUsingIndex()
+	// updateSliceUsingIndex()
 }
