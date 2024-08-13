@@ -40,9 +40,48 @@ func mapIterationUsingRange() {
 	}
 }
 
+// 5. Write a Go program that defines a function add which takes two integers and returns their sum.
+func sum(a, b int) int {
+	return a + b
+}
+
+// 6. Write a Go program that defines a function divide which takes two integers and returns both the quotient and the remainder.
+func divide(a, b int) (int, int) {
+	quotient := a / b
+	remainder := a % b
+	return quotient, remainder
+}
+
+// 7. Write a Go program that defines a function rectangleAreaPerimeter which takes the length and width of a rectangle and returns both the area and the perimeter using named return values.
+func rectangleAreaPerimeter(length, width int) (area, perimeter int) {
+	area = length * width
+	perimeter = 2 * (length + width)
+	return
+}
+
+// 8. Create a variadic function sum that takes any number of elements, return their sum.
+func variadicSum(nums ...int) int {
+	sum := 0
+	for _, num := range nums {
+		sum += num
+	}
+	return sum
+}
+
 func main() {
 	// frequencyCounter("Hello World")
 	// checkExistenceOfFirstFiveNumbers()
 	// sliceIterationUsingRange()
-	mapIterationUsingRange()
+	// mapIterationUsingRange()
+	// fmt.Println("Sum result: ", sum(5, 5))
+
+	// quotient, remainder := divide(7, 5)
+	// fmt.Printf("Quotient: %d, Remainder: %d\n", quotient, remainder)
+
+	// area, perimeter := rectangleAreaPerimeter(4, 8)
+	// fmt.Printf("Area: %d, Perimeter: %d\n", area, perimeter)
+
+	fmt.Printf("Variadic sum of [1,2,3,4,5]: %d\n", variadicSum(1, 2, 3, 4, 5))
+	fmt.Printf("Variadic sum of [11,21,31,41,51,61,71]: %d\n", variadicSum(11, 21, 31, 41, 51, 61, 71))
+
 }
