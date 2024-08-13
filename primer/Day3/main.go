@@ -24,7 +24,25 @@ func checkExistenceOfFirstFiveNumbers() {
 	}
 }
 
+// 3. Creates a slice of integers: []int{10, 20, 30, 40, 50}. Use the range keyword to iterate over the slice and print each index and value.
+func sliceIterationUsingRange() {
+	nums := []int{10, 20, 30, 40, 50}
+	for index, num := range nums {
+		fmt.Printf("Index: %d, Number: %d\n", index, num)
+	}
+}
+
+// 4. Creates a map with string keys and float values, e.g., map[string]float64{"pi": 3.14, "e": 2.71}. Use range to iterate over the map and print each key and value.
+func mapIterationUsingRange() {
+	constants := map[string]float64{"pi": 3.14, "e": 2.71}
+	for key, val := range constants {
+		fmt.Printf("Key: %s, Value: %f\n", key, val)
+	}
+}
+
 func main() {
 	// frequencyCounter("Hello World")
-	checkExistenceOfFirstFiveNumbers()
+	// checkExistenceOfFirstFiveNumbers()
+	// sliceIterationUsingRange()
+	mapIterationUsingRange()
 }
